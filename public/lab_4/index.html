@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Fahim Talukder Lab 4</title>
+
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>Fahim Talukder Lab 4</h1>
+    </div>
+
+    <div class="main">
+      <form action="/api" method="post">
+        <ul class="flex-outer">
+          <li>
+            <label for="fname">First Name</label>
+            <input
+              name="fname"
+              type="text"
+              id="fname"
+              placeholder="Enter your first name here"
+              maxlength="140"
+            />
+          </li>
+          <li>
+            <label for="lname">Last Name</label>
+            <input
+              name="lname"
+              type="text"
+              id="lname"
+              placeholder="Enter your last name here"
+              maxlength="140"
+            />
+          </li>
+          <li>
+            <label for="email">Email</label>
+            <input
+              name="email"
+              type="email"
+              id="email"
+              placeholder="Enter your email here"
+            />
+          </li>
+          <li>
+            <label for="phone">Phone</label>
+            <input
+              name="phone"
+              type="tel"
+              id="phone"
+              placeholder="Enter your phone here"
+            />
+          </li>
+          <li>
+            <label for="message">Text Field</label>
+            <textarea
+              name="message"
+              type="text"
+              rows="5"
+              cols="33"
+              id="message"
+              placeholder="Enter your message here"
+            ></textarea>
+          </li>
+          <li>
+            <p>Age</p>
+            <ul class="flex-inner">
+              <li>
+                <input name="eighteen" type="checkbox" id="eighteen" />
+                <label  for="eighteen">18-35</label>
+              </li>
+              <li>
+                <input name="thirtyfive" type="checkbox" id="thirtyfive" />
+                <label  for="thirtyfive">35-50</label>
+              </li>
+              <li>
+                <input name="fifty" type="checkbox" id="fifty" />
+                <label  for="fifty">50-65</label>
+              </li>
+              <!-- more list items here -->
+            </ul>
+          </li>
+          <li>
+            <button name="submit" id="submit" type="submit">SUBMIT FORM</button>
+          </li>
+        </ul>
+      </form>
+    </div>
+  </body>
+</html>

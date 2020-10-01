@@ -1,0 +1,22 @@
+body {
+    font: normal 18px/1.5 "arial", "Helvetica Neue", sans-serif;
+    background: #5BE387;
+    color: black;
+    padding: 30px 0;
+  }
+  .header{
+    color: #E6355E;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .header-img {
+    display: flex;
+    width: 28%;
+  }
+  .wrapper{
+    font: normal 18px/1.5 "arial", "Helvetica Neue", sans-serif;
+    background: #29B4E6;
+    color: black;
+  }

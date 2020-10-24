@@ -23,13 +23,12 @@ app.use((req, res, next) => {
 app.route('/api')
   .get((req, res) => {
     console.log('GET request detected');
-    res.send(`Lab 5 for ${process.env.NAME}`);
+    //res.send(`Lab 5 for ${process.env.NAME}`);
   })
   .post((req, res) => {
     console.log('POST request detected');
     console.log('Form data in res.body', req.body);
     res.json(countries);
-    
   });
 
 app.listen(port, () => {

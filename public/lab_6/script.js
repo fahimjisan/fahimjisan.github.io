@@ -1,4 +1,7 @@
 // You may wish to find an effective randomizer function on MDN.
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * Math.floor(max) - Math.floor(min));
+}
 
 function range(int) {
   const arr = [];
@@ -37,12 +40,12 @@ document.body.addEventListener('submit', async (e) => {
       const newArray = range(10);
       const newArray2 = newArray.map(() => {
         const number = getRandomInt(0,243);
-        return fromServer[number]
+        return fromServer[number];
       });
 
       const reverseList = newArray2.sort((a,b) => sortFunction(b,a, 'name'));
       const ul = document.createElement('ul');
-      ul.className = 'flex-inner';
+      ul.className = '.flex-inner';
       $('form').prepend(ul);
 
       reverseList.forEach((el, i) =>{

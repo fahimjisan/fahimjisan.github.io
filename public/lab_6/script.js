@@ -1,6 +1,7 @@
-// You may wish to find an effective randomizer function on MDN.
-function getRandomInt(min, max) {
-  return Math.floor(Math.random() * Math.floor(max) - Math.floor(min));
+function getRandomIntInclusive(min, max) {
+  const min1 = Math.ceil(min);
+  const max1 = Math.floor(max);
+  return Math.floor(Math.random() * (max1 - min1 + 1) + min1); // The maximum is inclusive and the minimum is inclusive
 }
 
 function range(int) {
@@ -11,10 +12,10 @@ function range(int) {
   return arr;
 }
 
-function sortFunction(a, b, key) {
-  if (a[key] < b[key]) {
+function sortByKey(org, compare, key) {
+  if (org[key] < compare[key]) {
     return -1;
-  } if (a[key] > b[key]) {
+  } if (org[key] > compare[key]) {
     return 1;
   }
   return 0;
@@ -32,30 +33,27 @@ document.body.addEventListener('submit', async (e) => {
   })
     .then((fromServer) => fromServer.json())
     .then((fromServer) => {
-      // You're going to do your lab work in here. Replace this comment.
-      if(document.querySelector('.flex-inner')){        
+      console.log(fromServer)
+      if (document.querySelector('.flex-inner')) {
         document.querySelector('.flex-inner').remove();
       }
-      console.log('fromServer', fromServer);
-      const newArray = range(10);
-      const newArray2 = newArray.map(() => {
-        const number = getRandomInt(0,243);
+      const newArr = range(10);
+      const newArr2 = newArr.map(() => {
+        const number = getRandomIntInclusive(0, 243);
         return fromServer[number];
       });
 
-      const reverseList = newArray2.sort((a,b) => sortFunction(b,a, 'name'));
-      const ul = document.createElement('ul');
-      ul.className = '.flex-inner';
+      const reverseList = newArr2.sort((org, compare) => sortByKey(org, compare, 'name'));
+      const ul = document.createElement('ol');
+      ul.className = 'flex-inner';
       $('form').prepend(ul);
 
-      reverseList.forEach((el, i) =>{
+      reverseList.forEach((el, i) => {
         const li = document.createElement('li');
-        $(li).append(`<input type="checkbox" value= ${el.code} id=${el.code} />`);
+        $(li).append(`<input type="checkbox" value=${el.code} id=${el.code} />`);
         $(li).append(`<label for=${el.code}>${el.name}</label>`);
         $(ul).append(li);
-
       });
-
     })
     .catch((err) => console.log(err));
 });

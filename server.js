@@ -34,8 +34,8 @@ app.route('/api')
     console.log('fetch request data', json);
     res.json(json);
 
-    console.log('POST request detected');
-    console.log('Form data in res.body', req.body);
+    //console.log('POST request detected');
+    //console.log('Form data in res.body', req.body);
     //res.json(countries);
   });
 

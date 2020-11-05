@@ -25,8 +25,6 @@ function makeYourOptionsObject(datapointsFromRestaurantsList) {
   console.log("makeYourOptionsObject");
   CanvasJS.addColorSet('customColorSet1', [
     // add an array of colors here https://canvasjs.com/docs/charts/chart-options/colorset/
- 
-
     "#2F4F4F",
     "#008080",
     "#2E8B57"
@@ -87,7 +85,8 @@ function runThisWithResultsFromServer(jsonFromServer) {
   // Instantiate your chart
   const reorganizedData = convertRestaurantsToCategories(jsonFromServer);
   const options = makeYourOptionsObject(reorganizedData);
-   const chart = new CanvasJS.Chart('chartContainer', options);
+  
+  const chart = new CanvasJS.Chart('chartContainer', options);
 
   chart.render();
 }
